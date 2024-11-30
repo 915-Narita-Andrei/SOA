@@ -1,0 +1,40 @@
+---
+openapi: 3.0.3
+servers:
+  - url: /api/shop
+info:
+  title: Shop API
+  version: '1.0.0'
+tags:
+  - name: Product
+paths:
+  /products:
+    get:
+      tags:
+        - Product
+      operationId: getAllProducts
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+
+components:
+  schemas:
+    Product:
+      required:
+        - name
+        - price
+        - count
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+        count:
+          type: number
