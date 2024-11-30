@@ -1,5 +1,7 @@
 package com.toie.shopApp.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.toie.shopApp.domain.EmailRequest;
 import com.toie.shopApp.domain.Product;
 import com.toie.shopApp.repository.ProductRepository;
@@ -15,6 +17,8 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
     private final EmailPublisher emailPublisher;
+    private final AnalyticsPubliser analyticsPubliser;
+    private final ObjectMapper objectMapper;
 
     public List<Product> getAllProducts() {
         return productRepository.findAll();
@@ -36,6 +40,7 @@ public class ProductService {
         productRepository.save(product);
 
         publishEmail(product);
+        publishAnalytics(product);
     }
 
     private void publishEmail(Product product) {
@@ -44,5 +49,13 @@ public class ProductService {
                 .productName(product.getName())
                 .build();
         emailPublisher.publishEmail(emailRequest);
+    }
+
+    private void publishAnalytics(Product product){
+        try {
+            analyticsPubliser.publishAnalytocs(objectMapper.writeValueAsString(product));
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Error while trying to serilize message to send it to Kafka");
+        }
     }
 }
