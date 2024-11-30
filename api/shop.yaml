@@ -23,6 +23,21 @@ paths:
                 items:
                   $ref: '#/components/schemas/Product'
 
+  /buy/{name}:
+    post:
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      tags:
+        - Product
+      operationId: buyProduct
+      responses:
+        "200":
+          description: OK
+
 components:
   schemas:
     Product:

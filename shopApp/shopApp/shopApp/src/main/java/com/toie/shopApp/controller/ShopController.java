@@ -18,9 +18,17 @@ public class ShopController implements ProductApi {
     private final ProductMapper productMapper;
 
     @Override
+    public ResponseEntity<Void> buyProduct(String name) {
+        productService.buyProduct(name);
+        return ResponseEntity.ok().build();
+    }
+
+    @Override
     public ResponseEntity<List<ProductDto>> getAllProducts() {
         var products = productService.getAllProducts();
         return ResponseEntity.ok(productMapper.map(products));
     }
+
+
 }
 

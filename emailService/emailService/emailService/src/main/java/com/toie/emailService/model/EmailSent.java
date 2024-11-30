@@ -1,4 +1,4 @@
-package com.toie.shopApp.domain;
+package com.toie.emailService.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,20 +13,16 @@ import org.springframework.lang.NonNull;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "products")
-public class Product {
+@Table(name = "email_sent")
+public class EmailSent {
     @Id
     private String id;
 
     @Column
     @NonNull
-    private String name;
+    private String email;
 
     @Column
     @NonNull
-    private int price;
-
-    @Column
-    @NonNull
-    private int count;
+    private String productName;
 }
