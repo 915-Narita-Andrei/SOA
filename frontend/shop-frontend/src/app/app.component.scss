@@ -1,14 +1,6 @@
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
 nav {
   background-color: #343a40;
-  padding: 15px 20px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -28,16 +20,4 @@ nav a:hover {
 nav a.active {
   background-color: #007bff;
   font-weight: bold;
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-  nav {
-    padding: 10px;
-  }
-
-  nav a {
-    margin: 5px;
-    padding: 5px 10px;
-  }
 }

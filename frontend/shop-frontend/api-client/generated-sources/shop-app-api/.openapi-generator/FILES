@@ -10,6 +10,8 @@ configuration.ts
 encoder.ts
 git_push.sh
 index.ts
+model/analytics.ts
+model/emailSent.ts
 model/loginRequest.ts
 model/loginResponse.ts
 model/models.ts

@@ -13,6 +13,8 @@ import { HttpHeaders }                                       from '@angular/comm
 
 import { Observable }                                        from 'rxjs';
 
+import { Analytics } from '../model/models';
+import { EmailSent } from '../model/models';
 import { Product } from '../model/models';
 
 
@@ -30,6 +32,18 @@ export interface ProductServiceInterface {
      * @param name 
      */
     buyProduct(name: string, extraHttpRequestParams?: any): Observable<{}>;
+
+    /**
+     * 
+     * 
+     */
+    getAllAnalytics(extraHttpRequestParams?: any): Observable<Array<Analytics>>;
+
+    /**
+     * 
+     * 
+     */
+    getAllEmails(extraHttpRequestParams?: any): Observable<Array<EmailSent>>;
 
     /**
      * 
