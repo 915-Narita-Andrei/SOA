@@ -3,7 +3,7 @@ package com.toie.shopApp.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.toie.shopApp.domain.EmailRequest;
-import com.toie.shopApp.domain.Product;
+import com.toie.shopApp.domain.entity.Product;
 import com.toie.shopApp.repository.ProductRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

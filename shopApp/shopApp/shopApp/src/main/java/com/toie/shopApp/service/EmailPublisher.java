@@ -1,7 +1,6 @@
 package com.toie.shopApp.service;
 
 import com.toie.shopApp.domain.EmailRequest;
-import com.toie.shopApp.domain.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;

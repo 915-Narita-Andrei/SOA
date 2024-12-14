@@ -1,6 +1,6 @@
 package com.toie.shopApp.repository;
 
-import com.toie.shopApp.domain.Product;
+import com.toie.shopApp.domain.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

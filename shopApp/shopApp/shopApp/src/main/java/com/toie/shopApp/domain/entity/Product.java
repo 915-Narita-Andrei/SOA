@@ -1,4 +1,4 @@
-package com.toie.shopApp.domain;
+package com.toie.shopApp.domain.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
