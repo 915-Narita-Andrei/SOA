@@ -4,6 +4,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/soa_app_db
+#    url: jdbc:postgresql://postgres:5432/soa_app_db
     username: admin
     password: admin
   jpa:
@@ -22,7 +23,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
 server:
   servlet:
-    context-path: /api/auth
+    context-path: /api/shop
 
 security:
   jwt:
